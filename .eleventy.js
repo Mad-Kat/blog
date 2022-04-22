@@ -15,6 +15,13 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPassthroughCopy('static');
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
 
+  eleventyConfig.addCollection("posts_en", function (collection) {
+    return collection.getFilteredByGlob("./pages/en/*.md");
+  });
+  eleventyConfig.addCollection("posts_de", function (collection) {
+    return collection.getFilteredByGlob("./pages/de/*.md");
+  });
+
 
   // if (process.env.ELEVENTY_ENV)
     eleventyConfig.addTransform('transform', (content, outputPath) => {

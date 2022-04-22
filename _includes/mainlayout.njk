@@ -8,6 +8,12 @@
     <title>{{title}}</title>
   </head>
   <body>
+    <header class="header-bar">
+      <a href="/pages/{{locale}}/">Home</a>
+      <a href="/pages/{{locale}}/">Blog</a>
+      <a href="/pages/{{locale}}/about">About</a>
+      <a href="/pages/{{locale}}/contact">Contact me</a>
+    </header>
     {# <header>{{ collections.all | eleventyNavigation | eleventyNavigationToHtml | safe }}</header> #}
 		{{content | safe}}
   </body>

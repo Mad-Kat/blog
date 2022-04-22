@@ -57,4 +57,26 @@ img {
 	vertical-align: super;
 }
 
+.header-bar {
+	display: flex;
+	justify-content: center;
+	/* gap: 80px; */
+	padding-top: 1rem;
+}
+
+.header-bar > a {
+	text-decoration: none;
+	color: black;
+
+	font-family: 'Catamaran';
+	font-size: 27px;
+	font-weight: 550;
+	padding: 2rem 3rem 2rem 3rem;
+	border-radius: .4rem;
+}
+
+
+.header-bar > a:hover {
+	background-color: #eee;
+}
 
