@@ -13,6 +13,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.setLibrary("md", markdownLib);
 
 	eleventyConfig.addPassthroughCopy('static');
+	eleventyConfig.addPassthroughCopy('_redirects');
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
 
   eleventyConfig.addCollection("posts_en", function (collection) {
