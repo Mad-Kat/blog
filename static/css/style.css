@@ -106,3 +106,30 @@ img {
 	/* border: 1px solid green; */
 }
 
+/* .intro-image {
+	max-width: 480px;
+} */
+
+article {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr; 
+	gap: 3rem
+	/* flex-direction: row;
+	align-items: flex-start; */
+}
+
+article:hover {
+	cursor: pointer;
+}
+
+
+.article {
+	text-decoration: none;
+	color: #333;
+}
+
+article > p > picture > img {
+	padding: 0;
+}
+

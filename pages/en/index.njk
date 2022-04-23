@@ -5,14 +5,20 @@ layout: mainlayout.njk
 {% set posts = collections["posts_" + locale] %}
 {% for post in posts %}
   {% if loop.first %}<ul>{% endif %}
+    <a class="article" href="{{post.url}}">
     <li>
-
       <article>
+        <div class="article-text">
         {# <p><time datetime="{{ post.date | date('Y-MM-DD') }}">{{ post.date | date("DD MMMM[,] Y", locale) }}</time></p> #}
-        <h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
+          <h3>{{ post.data.title }}</h3>
+          <p>{{post.data.introText}}</p>
+        </div>
+        <p><img class="intro-image" src="{{post.data.introImage}}"/></p>
+        {# <img>{{post.data.introImage}}</img> #}
       </article>
 
     </li>
+      </a>
 
   {% if loop.last %}</ul>{% endif %}
 {% endfor %}

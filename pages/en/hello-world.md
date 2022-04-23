@@ -2,6 +2,9 @@
 layout: mainlayout.njk
 title: Hello world
 translationKey: hello-world
+
+introText: This is my first page that I ever written publicly so bare with me when I just use this to introduce myself. My name is Luca Schneider, currently working as a Full Stack Software Engineer in a small German startup...
+introImage: /static/images/myself.jpg
 ---
 
 # {{title}}
