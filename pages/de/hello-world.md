@@ -1,6 +1,7 @@
 ---
 layout: mainlayout.njk
 title: Hallo Welt
+translationKey: hello-world
 ---
 
 # {{title}}

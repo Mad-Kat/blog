@@ -13,7 +13,7 @@ h1 {
 	font-weight: 800;
 	font-size: 60px;
 	text-align: center;
-	padding: 3rem;
+	padding: 2rem 0 3rem 0;
 	color: #333;
 }
 
@@ -78,5 +78,31 @@ img {
 
 .header-bar > a:hover {
 	background-color: #eee;
+}
+
+.c-lggnav {
+	display: flex;
+	flex-direction: row;
+	justify-content: end;
+	padding-top: .5rem;
+
+}
+
+.c-lggnav__link {
+	text-decoration: none;
+	color: black;
+
+	padding: 0.5rem 1rem .5rem 1rem;
+	border-radius: .5rem;
+	border: 1px solid white;
+
+	font-family: 'Catamaran';
+	font-size: 21px;
+	font-weight: 450;
+}
+
+.c-lggnav__link.is-active {
+	background-color: #d9ed92;
+	/* border: 1px solid green; */
 }
 

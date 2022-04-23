@@ -1,8 +1,7 @@
 ---
 layout: mainlayout.njk
 title: Hello world
-eleventyNavigation:
-  key: Hello world
+translationKey: hello-world
 ---
 
 # {{title}}
