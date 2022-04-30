@@ -1,5 +1,5 @@
 {% for lgg in site.languages %}
-  {% if loop.first %}<ul class="c-lggnav">{% endif %}
+  {% if loop.first %}<div class="lang-switch"><ul class="c-lggnav">{% endif %}
 
   {# set translatedUrl to the homepage of that language by default #}
   {% set translatedUrl = "/" + lgg.code + "/" %}
@@ -23,5 +23,5 @@
     <a class="c-lggnav__link  {{ activeClass }}" href="{{ translatedUrl }}">{{ lgg.label }}</a>
   </li>
 
-  {% if loop.last %}</ul>{% endif %}
+  {% if loop.last %}</ul></div>{% endif %}
 {% endfor %}

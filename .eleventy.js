@@ -3,6 +3,7 @@ let markdownItFootnote = require("markdown-it-footnote");
 const Image = require("@11ty/eleventy-img");
 const { parseHTML } = require('linkedom');
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
+const pluginRss = require("@11ty/eleventy-plugin-rss");
 
 // function imageShortcode(src, alt, sizes="(min-width: 1024px) 100vw, 50vw") {
 //   console.log(`Generating image(s) from:  ${src}`)
@@ -45,6 +46,7 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPassthroughCopy('static');
 	eleventyConfig.addPassthroughCopy('_redirects');
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
+  eleventyConfig.addPlugin(pluginRss);
 
   eleventyConfig.addCollection("posts_en", function (collection) {
     return collection.getFilteredByGlob("./pages/en/*.md");

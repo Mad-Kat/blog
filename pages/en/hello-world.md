@@ -51,4 +51,6 @@ I will go back to my first job, but instead of the backend engineer I will be a 
 
 As I want to be open how my salary progressed over the years, I created a small visualization of it.
 
+![salary progression](/static/images/salary-progression.png)
+
 [^1]: [1]: [statistics about swiss young adults and their professional way (only in DE/FR/IT)](https://www.sbfi.admin.ch/sbfi/de/home/bildung/berufliche-grundbildung/nahtstellenbarometer.html)

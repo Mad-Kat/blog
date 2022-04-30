@@ -51,4 +51,6 @@ Ich werde zu meinem ersten Job zurückkehren, aber anstelle des Backend-Ingenieu
 
 Da ich offenlegen möchte, wie sich mein Gehalt im Laufe der Jahre entwickelt hat, habe ich eine kleine Visualisierung erstellt.
 
+![Gehaltsprogression](/static/images/salary-progression.png)
+
 [^1]: [statistics about swiss young adults and their professional way (only in DE/FR/IT)](https://www.sbfi.admin.ch/sbfi/de/home/bildung/berufliche-grundbildung/nahtstellenbarometer.html)

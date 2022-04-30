@@ -1,0 +1,19 @@
+{
+  "name": "Luca's Blog",
+  "description": "Luca's blog is a small website for Luca to blog about Software Engineering relevant topics.",
+  "url": "https://schneider.is",
+  "author": {
+    "name": "Luca Schneider",
+    "email": "luca@schneider.is"
+  },
+  "languages": [
+    {
+      "label": "English",
+      "code": "en"
+    },
+    {
+      "label": "Deutsch",
+      "code": "de"
+    }
+  ]
+}
