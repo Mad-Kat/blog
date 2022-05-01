@@ -1,13 +1,11 @@
 ---
-layout: mainlayout.njk
+layout: post.njk
 title: Hallo Welt
 translationKey: hello-world
 
 introText: Dies ist meine erste Seite, die ich jemals öffentlich geschrieben habe, also habt Nachsicht mit mir, wenn ich mich hier einfach mal vorstelle. Mein Name ist Luca Schneider und derzeit arbeite als Full Stack Software Engineer in einem kleinen deutschen Startup...
 introImage: /static/images/myself.jpg
 ---
-
-# {{title}}
 
 Dies ist meine erste Seite, die ich jemals öffentlich geschrieben habe, also habt Nachsicht mit mir, wenn ich mich hier einfach mal vorstelle.
 

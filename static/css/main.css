@@ -1,0 +1,28 @@
+@font-face {
+	font-family: 'Montserrat';
+	src: url('/static/font/Montserrat-VariableFont_wght.ttf') format('truetype-variations');
+}
+
+@font-face {
+	font-family: 'Catamaran';
+	src: url('/static/font/Catamaran-VariableFont_wght.ttf') format('truetype-variations');
+}
+
+html {
+	font-size: 62.5%; /* set REM base 10 to pixels */
+}
+
+body {
+	font-family: 'Catamaran', sans-serif;
+	font-size: 2.1rem;
+	max-width: 70ch;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+img {
+	width: 100%;
+	height: fit-content;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+}

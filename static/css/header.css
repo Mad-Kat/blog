@@ -1,0 +1,53 @@
+.header {
+	width: 100%;
+	padding-top: 2rem;
+}
+
+.header__title {
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+	padding-bottom: 1rem;
+}
+
+.header__title > a {
+	text-decoration: none;
+	font-family: 'Montserrat';
+	font-size: 3rem;
+	font-weight: 500;
+}
+
+.languages {
+	display: flex;
+	color: #656565;
+}
+
+.languages > a + a {
+  border-left: 2px solid #656565;
+}
+
+.languages > a {
+	text-decoration: none;
+	font-size: 2.4rem;
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+
+.nav {
+	text-transform: capitalize;
+  text-transform: uppercase;
+  display: flex;
+	gap: 8rem;
+	padding-bottom: 3rem;
+
+}
+
+.nav > a {
+	text-decoration: none;
+	font-size: 2.4rem;
+	color: #656565;
+}
+
+.nav>a:hover {
+	color: var(--accent-color)
+}
