@@ -2,6 +2,8 @@
 layout: post.njk
 title: Hallo Welt
 translationKey: hello-world
+date: "2022-05-13T08:00+02:00"
+permalink: "{{locale}}/{{translationKey}}.html"
 
 introText: Dies ist meine erste Seite, die ich jemals öffentlich geschrieben habe, also habt Nachsicht mit mir, wenn ich mich hier einfach mal vorstelle. Mein Name ist Luca Schneider und derzeit arbeite als Full Stack Software Engineer in einem kleinen deutschen Startup...
 introImage: /static/images/myself.jpg
