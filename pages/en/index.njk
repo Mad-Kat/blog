@@ -3,23 +3,36 @@ layout: mainlayout.njk
 permalink: "{{locale}}/"
 ---
 
+
+<aside class="intro">
+  <p><img src="/static/images/luca.jpg" alt="Luca Schneider"/></p>
+  <p>
+    Personal blog of <a href="https://mobile.twitter.com/Mad__Kat">Luca Schneider</a>.
+  </p>
+</aside>
+
 {% set posts = collections["posts_" + locale] %}
 {% for post in posts %}
   {% if loop.first %}<ul>{% endif %}
-    <a class="article" href="{{post.url}}">
     <li>
-      <article>
-        <div class="article-text">
-        {# <p><time datetime="{{ post.date | date('Y-MM-DD') }}">{{ post.date | date("DD MMMM[,] Y", locale) }}</time></p> #}
-          <h3>{{ post.data.title }}</h3>
-          <p>{{post.data.introText}}</p>
-        </div>
-        <p><img class="intro-image" src="{{post.data.introImage}}"/></p>
+      <a class="article" href="{{post.url}}">
+        <article>
+          <div class="article-text">
+            <h3>{{ post.data.title }}</h3>
+            <p class="article-info">
+              <time datetime="{{ page.date | date(locale) }}">
+                      {{ page.date | date(locale)  }}
+              </time> 
+              | 
+              <small>{{ post.templateContent | readingTime }} read</small>
+            </p>
+            <p>{{post.data.introText}}</p>
+          </div>
         {# <img>{{post.data.introImage}}</img> #}
-      </article>
-
-    </li>
+        <p><img class="intro-image" src="{{post.data.introImage}}"/></p>
+        </article>
       </a>
+    </li>
 
   {% if loop.last %}</ul>{% endif %}
 {% endfor %}

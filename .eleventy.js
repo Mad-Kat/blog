@@ -21,6 +21,10 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("_redirects");
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
   eleventyConfig.addPlugin(pluginRss);
+  eleventyConfig.addFilter("debugger", (...args) => {
+    console.log(...args);
+    debugger;
+  });
   eleventyConfig.addCollection("posts_en", function (collection) {
     return collection.getFilteredByGlob("./pages/en/*.md");
   });

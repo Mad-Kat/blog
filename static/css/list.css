@@ -1,0 +1,44 @@
+.article  {
+	text-decoration: none;
+}
+
+.article article {
+	display: flex;
+	justify-content: space-between;
+}
+
+.article article:hover {
+	color: var(--accent-color)
+}
+
+.article img {
+	padding: 0;
+	max-width: 30rem;
+	max-height: 15rem;
+
+}
+
+.article-text h3 {
+	font-size: 3rem;
+	font-family: 'Montserrat';
+	padding-bottom: 1rem;
+}
+
+.article-info {
+	font-size: 1.6rem;
+	padding-bottom: .5rem;
+	color: #656565;
+}
+
+.intro {
+	display: flex;
+	align-items: center;
+	padding-bottom: 3rem;
+}
+
+.intro img {
+	width: 5rem;
+	height: 5rem;
+	margin-right: 2rem;
+	border-radius: 50%;
+}
