@@ -3,8 +3,16 @@
 }
 
 .article article {
-	display: flex;
-	justify-content: space-between;
+	display: grid;
+	grid-template-columns: 1fr;
+	row-gap: 1rem;
+}
+
+
+@media screen and (min-width: 500px) {
+	.article article {
+		grid-template-columns: 2fr 1fr;
+	}
 }
 
 .article article:hover {
@@ -13,9 +21,6 @@
 
 .article img {
 	padding: 0;
-	max-width: 30rem;
-	max-height: 15rem;
-
 }
 
 .article-text h3 {

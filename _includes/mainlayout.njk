@@ -7,8 +7,9 @@
 		<link rel="stylesheet" href="/static/css/variables.css">
 		<link rel="stylesheet" href="/static/css/main.css">
 		<link rel="stylesheet" href="/static/css/header.css">
-		<link rel="stylesheet" href="/static/css/post.css">
-		<link rel="stylesheet" href="/static/css/list.css">
+    {% if css %}
+      <link rel="stylesheet" href="{{css}}" />
+    {% endif%}
     <title>{{title}}</title>
   </head>
   <body>

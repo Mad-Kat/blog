@@ -37,9 +37,14 @@
 	text-transform: capitalize;
   text-transform: uppercase;
   display: flex;
-	gap: 8rem;
+	gap: 2rem;
 	padding-bottom: 3rem;
+}
 
+@media screen and (min-width: 370px) {
+	.nav {
+		gap: 8rem;
+	}
 }
 
 .nav > a {
