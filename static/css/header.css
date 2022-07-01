@@ -12,19 +12,19 @@
 
 .header__title > a {
 	text-decoration: none;
-	font-family: 'Montserrat';
-	font-size: 3rem;
-	font-weight: 600;
+	font-family: 'Inter', sans-serif;
+	font-size: 5rem;
+	font-weight: 650;
+	letter-spacing: -0.1rem;
 	color: var(--accent-color);
 }
 
 .languages {
 	display: flex;
-	color: #656565;
 }
 
 .languages > a + a {
-  border-left: 2px solid #656565;
+  border-left: 2px solid #A1A1AA;
 }
 
 .languages > a {

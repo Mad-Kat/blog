@@ -26,14 +26,17 @@
 
 .article-text h3 {
 	font-size: 3rem;
-	font-family: 'Montserrat';
+	font-family: 'Inter';
+	color: var(--accent-color);
+	letter-spacing: -0.07rem;
+	font-weight: 550;
 	padding-bottom: 1rem;
 }
 
 .article-info {
 	font-size: 1.6rem;
-	padding-bottom: .5rem;
-	color: #656565;
+	padding-bottom: 2rem;
+	color: #52525B;
 }
 
 .intro {

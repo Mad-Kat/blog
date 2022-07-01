@@ -21,7 +21,7 @@ But nevertheless I want to show you how I setup the React application on S3 resp
 
 The first step is to create the public accessible S3-bucket.
 
-```jsx
+```hcl
 resource "opentelekomcloud_s3_bucket" "frontend_bucket" {
   bucket = "frontend-app"
   acl    = "public-read"
@@ -32,7 +32,7 @@ Afterwards we need an attached policy, that allows us to access the bucket conte
 Additionally we need to configure the bucket that it responses with the root html file when the index page is requested.
 Additionally we can specify the error page, which is shown when we want to access a resource/path that isn’t available.
 
-```jsx
+```hcl
 resource "opentelekomcloud_s3_bucket" "frontend_bucket" {
   bucket = local.bucket_name
   acl    = "public-read"
@@ -71,7 +71,7 @@ At last the most interesting one. We need to upload the output of the build proc
 
 Uploading the files and directories is easy done with terraform.
 
-```jsx
+```hcl
 resource "opentelekomcloud_s3_bucket_object" "frontend_object" {
   for_each = fileset("./build", "**")
   key      = each.value
@@ -84,7 +84,7 @@ So we create a set for all files in a specific directory. In this case `./build`
 
 We specify the corresponding MIME-type for each file and add a etag with the hashed contents of the file (so that html response can be correctly cached and invalidated when the content changes).
 
-```jsx
+```hcl
 resource "opentelekomcloud_s3_bucket_object" "frontend_object" {
   for_each = fileset("${path.module}/build", "**")
   key      = each.value
@@ -98,7 +98,7 @@ resource "opentelekomcloud_s3_bucket_object" "frontend_object" {
 
 The secret sauce is still not spilled. The content type will be assigned through a lookup of the file extension in a map. In order to do that we need to create such a map.
 
-```jsx
+```hcl
 locals {
 	mime_map = {
 		".html" = "text/html"
@@ -110,7 +110,7 @@ locals {
 
 But this only maps three different types of files and there could be a lot more (images, illustrations, videos...). So in order to map most of the common file types we can use a [file](file) that shows the mapping per line according to the [iana](<[https://www.iana.org/assignments/media-types/media-types.xhtml](https://www.iana.org/assignments/media-types/media-types.xhtml)>) and generate a map out of it with the help of terraform.
 
-```jsx
+```hcl
 locals {
   raw_content = file("./mime.types")
   raw_lines = [

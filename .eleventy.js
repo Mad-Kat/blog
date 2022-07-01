@@ -5,12 +5,13 @@ const { parseHTML } = require("linkedom");
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const readingTime = require("eleventy-plugin-reading-time");
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const moment = require("moment");
 
 const isProd = process.env.ELEVENTY_ENV === "production";
 
 module.exports = function (eleventyConfig) {
-  eleventyConfig.ignores.add("pages/en/terraform-s3-react.md");
+  // eleventyConfig.ignores.add("pages/en/terraform-s3-react.md");
   eleventyConfig.setLibrary(
     "md",
     markdownIt({
@@ -22,6 +23,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("_redirects");
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
   eleventyConfig.addPlugin(pluginRss);
+  eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addCollection("tagList", (collections) => {
     const tags = collections
       .getAll()

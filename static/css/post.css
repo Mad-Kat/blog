@@ -1,25 +1,36 @@
 .post__header {
-	font-family: 'Montserrat';
 	font-size: 4rem;
 	font-weight: 600;
 	padding-bottom: 3rem;
+	padding-top: 4rem;
 }
 
 .post__details {
-	font-family: 'Catamaran';
-	font-size: 2.0rem;
+	font-size: 1.8rem;
 	font-weight: 400;
-	color: #656565;
-	padding-top: .7rem;
+	color: #52525B;
+	padding-top: 1.2rem;
 }
 
 .post__content > p {
-	line-height: 125%;
-	padding-bottom: 2rem;
+	line-height: 160%;
+	margin-bottom: 1.5rem;
 }
 
 .post__content > h2,h3 {
 	font-size: 2.4rem;
 	font-weight: 600;
-	padding-bottom: .5rem;
+	padding-bottom: 2rem;
+	margin-top: 4rem;
+}
+
+sup > a {
+	text-decoration: none;
+	font-weight: 600;
+}
+
+/* Overrides */
+.header__title > a {
+	font-size: 3rem;
+	font-weight: 600;
 }
