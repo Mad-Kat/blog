@@ -29,7 +29,9 @@ css: /static/css/list.css
             </p>
             <p>{{post.data.introText}}</p>
           </div>
+        {% if post.data.introImage %}
         <p><img class="intro-image" src="{{post.data.introImage}}"/></p>
+        {% endif %}
         </article>
       </a>
     </li>

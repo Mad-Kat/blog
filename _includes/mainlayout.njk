@@ -20,14 +20,19 @@
           {% include 'language-switch.njk'%}
         </div>
       </div>
-      <nav class="nav">
-        <a href="/{{locale}}/">Home</a>
-        <a href="/{{locale}}/tags">Tags</a>
-        <a href="/{{locale}}/feed.xml">RSS</a>
-      </nav>
+      {# <nav class="nav"> #}
+        {# <a href="/{{locale}}/">Home</a> #}
+        {# <a href="/{{locale}}/tags.html">Tags</a> #}
+        {# <a href="/{{locale}}/feed.xml">RSS</a> #}
+      {# </nav> #}
     </header>
     <main class="main">
       {{content | safe}}
     </main>
   </body>
+  <footer>
+    <a href="">twitter</a>
+    <a href="">github</a>
+    <a href="/{{locale}}/feed.xml">rss</a>
+  </footer>
 </html>

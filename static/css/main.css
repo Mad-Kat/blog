@@ -19,6 +19,7 @@ body {
 	margin-top: 1vh;
 	margin-left: 5vw;
 	margin-right: 5vw;
+	padding-bottom: 4rem;
 }
 
 img {
@@ -26,6 +27,12 @@ img {
 	height: fit-content;
 	padding-top: 1rem;
 	padding-bottom: 1rem;
+}
+
+footer {
+	padding-top: 8rem;
+	display: flex;
+	justify-content: space-between;
 }
 
 @media screen and (min-width: 120ch) {

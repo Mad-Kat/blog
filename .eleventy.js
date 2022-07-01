@@ -10,6 +10,7 @@ const moment = require("moment");
 const isProd = process.env.ELEVENTY_ENV === "production";
 
 module.exports = function (eleventyConfig) {
+  eleventyConfig.ignores.add("pages/en/terraform-s3-react.md");
   eleventyConfig.setLibrary(
     "md",
     markdownIt({
@@ -21,6 +22,15 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("_redirects");
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
   eleventyConfig.addPlugin(pluginRss);
+  eleventyConfig.addCollection("tagList", (collections) => {
+    const tags = collections
+      .getAll()
+      .reduce((tags, item) => tags.concat(item.data.tags), [])
+      .filter((tag) => !!tag)
+      .filter((tag) => tag !== "post")
+      .sort();
+    return Array.from(new Set(tags));
+  });
   eleventyConfig.addFilter("debugger", (...args) => {
     console.log(...args);
     debugger;
