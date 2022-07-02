@@ -13,7 +13,7 @@ css: /static/css/list.css
 </aside>
 
 {% set posts = collections["posts_" + locale] %}
-{% for post in posts %}
+{% for post in posts | reverse %}
   {% if loop.first %}<ul>{% endif %}
     <li>
       <a class="article" href="{{post.url}}">
@@ -21,8 +21,8 @@ css: /static/css/list.css
           <div class="article-text">
             <h3>{{ post.data.title }}</h3>
             <p class="article-info">
-              <time datetime="{{ page.date | date(locale) }}">
-                      {{ page.date | date(locale)  }}
+              <time datetime="{{ post.date | date(locale) }}">
+                      {{ post.date | date(locale)  }}
               </time> 
               | 
               <small>{{ post.templateContent | readingTime }} read</small>
