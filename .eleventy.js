@@ -6,9 +6,8 @@ const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const readingTime = require("eleventy-plugin-reading-time");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-const moment = require("moment");
-
-const isProd = process.env.ELEVENTY_ENV === "production";
+const markdownItAttrs = require("markdown-it-attrs");
+const tinyCSS = require("@sardine/eleventy-plugin-tinycss");
 
 module.exports = function (eleventyConfig) {
   // eleventyConfig.ignores.add("pages/en/terraform-s3-react.md");
@@ -16,7 +15,9 @@ module.exports = function (eleventyConfig) {
     "md",
     markdownIt({
       html: true,
-    }).use(markdownItFootnote)
+    })
+      .use(markdownItFootnote)
+      .use(markdownItAttrs)
   );
   eleventyConfig.addPassthroughCopy("static");
   eleventyConfig.addPlugin(readingTime);
@@ -24,6 +25,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(syntaxHighlight);
+  eleventyConfig.addPlugin(tinyCSS);
   eleventyConfig.addCollection("tagList", (collections) => {
     const tags = collections
       .getAll()
@@ -63,9 +65,9 @@ const createResponisveImages = (content, outputPath) => {
     let { document } = parseHTML(content);
 
     const options = {
-      widths: [768, 1280, 1600, 1920, null],
-      sizes: ["960px", "480px"], // your responsive sizes here
-      formats: ["webp", "jpeg"],
+      widths: [320, 640, 960],
+      sizes: ["(max-width: 75ch) 90vw", "75ch"], // your responsive sizes here
+      formats: ["webp", "jpeg", "avif"],
       urlPath: "/static/images",
       outputDir: "./_site/static/images",
     };
@@ -87,16 +89,15 @@ const createResponisveImages = (content, outputPath) => {
         i.setAttribute("decoding", "async");
       }
 
-      i.outerHTML = `
-          <picture>
-            <source type="image/webp" sizes="${
-              options.sizes
-            }" srcset="${meta.webp.map((p) => p.srcset).join(", ")}">
-            <source type="image/jpeg" sizes="${
-              options.sizes
-            }" srcset="${meta.jpeg.map((p) => p.srcset).join(", ")}">
-            ${i.outerHTML}
-          </picture>`;
+      i.setAttribute("sizes", options.sizes);
+      i.setAttribute(
+        "srcset",
+        [
+          meta.webp.map((p) => p.srcset),
+          meta.jpeg.map((p) => p.srcset),
+          meta.avif.map((p) => p.srcset),
+        ].join(", ")
+      );
     });
     return `${document}`;
   }

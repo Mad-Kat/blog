@@ -16,8 +16,11 @@
     "@11ty/eleventy-navigation": "^0.3.2",
     "@11ty/eleventy-plugin-rss": "^1.1.2",
     "@11ty/eleventy-plugin-syntaxhighlight": "^4.1.0",
+    "@sardine/eleventy-plugin-tinycss": "^2.0.0",
+    "eleventy-plugin-images-responsiver": "^1.12.0",
     "eleventy-plugin-reading-time": "^0.0.1",
     "linkedom": "^0.14.7",
+    "markdown-it-attrs": "^4.1.4",
     "markdown-it-footnote": "^3.0.3",
     "moment": "^2.29.3"
   }

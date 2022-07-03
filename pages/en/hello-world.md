@@ -13,7 +13,7 @@ This is my first page that I ever written publicly so bare with me when I just u
 
 My name is Luca Schneider, born in the first half of the 90'ies in Switzerland and currently working as a Full Stack Software Engineer in a small German startup.
 
-![portrait of myself](/static/images/myself.jpg)
+![portrait of myself](/static/images/myself.jpg){width=3600}
 
 ## Apprenticeship
 
