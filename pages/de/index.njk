@@ -30,7 +30,10 @@ title: Luca's blog
             </p>
             <p>{{post.data.introText}}</p>
           </div>
-        <p><img class="intro-image" src="{{post.data.introImage}}" alt="article intro image"/></p>
+
+        {% if post.data.introImage %}
+        <p><img class="intro-image" src="{{post.data.introImage}}"/></p>
+        {% endif %}
         </article>
       </a>
     </li>
